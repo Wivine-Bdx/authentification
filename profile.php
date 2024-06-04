@@ -21,14 +21,12 @@ if (!$currentUser) {
 </head>
 
 <body>
-<nav>
-    <a href="/">Accueil</a>
-    <a href="/login.php">Connexion</a>
-    <a href="/logout.php">Déconnexion</a>
-    <a href="/profile.php">Profil</a>
-    <a href="/register.php">Inscription</a>
-</nav>
+    <nav>
+        <a href="/">Accueil</a>
+        <a href="/profile.php">Profil</a>
+        <a href="/logout.php">Déconnexion</a>
+    </nav>
 
-<h1>Profil</h1>
-    <h2>Hello <?= $user['username'] ?></h2>
+    <h1>Profil</h1>
+    <h2>Hello <?= $currentUser['username'] ?></h2>
 </body>
