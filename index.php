@@ -1,4 +1,8 @@
 <?php
+
+require_once './isLogin.php';
+
+$currentUser = isLogin();
 ?>
 
 <!DOCTYPE html>
@@ -14,13 +18,16 @@
 <body>
 <nav>
     <a href="/">Accueil</a>
-    <a href="/login.php">Connexion</a>
-    <a href="/logout.php">Déconnexion</a>
-    <a href="/profile.php">Profil</a>
-    <a href="/register.php">Inscription</a>
+    <?php if ($currentUser) : ?>
+        <a href="/profile.php">Profil</a>
+        <a href="/logout.php">Déconnexion</a>
+    <?php else : ?>
+        <a href="/login.php">Connexion</a>
+        <a href="/register.php">Inscription</a>
+    <?php endif; ?>
 </nav>
 
-<h1>ACCUEIL</h1>
+<h1>Accueil</h1>
 </body>
 
 </html>

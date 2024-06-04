@@ -2,7 +2,8 @@
 
 // Connexion à la BDD
 $pdo = require_once './database.php';
-
+// Initialisation de la variable d'erreur
+$error = '';
 // Vérification de la méthode (doit être égal à POST)
 // Si POST alors filtrage et assainissement des donnés du formulaire 
 // (échappement caractères spéciaux et assainit email)
@@ -12,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     'email' => FILTER_SANITIZE_EMAIL,
 ]);
 // Initialisation des variables et validation avec les valeurs du formulaire
-    $error = '';
     $username = $input['username'] ?? '';
     $password = $_POST['password'] ?? '';
     $email = $input['email'] ?? '';
@@ -54,8 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <nav>
         <a href="/">Accueil</a>
         <a href="/login.php">Connexion</a>
-        <a href="/logout.php">Déconnexion</a>
-        <a href="/profile.php">Profil</a>
         <a href="/register.php">Inscription</a>
     </nav>
 
