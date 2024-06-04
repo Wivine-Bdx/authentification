@@ -1,6 +1,6 @@
 <?php
 // Création d'une fonction d'autorisation
-function isLoggedIn()
+function isLogin()
 {
 // Connexion à la BDD
     $pdo = require_once './database.php';
